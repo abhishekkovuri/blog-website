@@ -10,17 +10,20 @@ export default new Vuex.Store({
 	state: {
 		categories: [],
 		postsList: [],
-		totalPages: null
+		totalPages: null,
+		postDetail: {}
 	},
 	getters: {
 		getCategories: state => state.categories,
 		getPostsList: state => state.postsList,
+		getPostDetail: state => state.postDetail,
 		getTotalPages: state => state.totalPages
 	},
 	mutations: {
 		setCategories: (state, value) => (state.categories = value),
 		setTotalPages: (state, value) => (state.totalPages = value),
-		setPostsList: (state, value) => (state.postsList = value)
+		setPostsList: (state, value) => (state.postsList = value),
+		setPostDetail: (state, value) => (state.postDetail = value)
 	},
 	actions: {
 		getCategoriesFromAPI ({ commit }) {
@@ -45,6 +48,15 @@ export default new Vuex.Store({
 				response => {
 					commit('setPostsList', response.data.posts)
 					commit('setTotalPages', response.data.found)
+				},
+				utils.errorHandler
+			)
+		},
+		getPostDetailsFromAPI ({ commit }, { slugQuery }) {
+			axiosHelper.makeGetRequest(
+				`${apiConfig.getPosts}${slugQuery}`,
+				response => {
+					commit('setPostDetail', response.data)
 				},
 				utils.errorHandler
 			)

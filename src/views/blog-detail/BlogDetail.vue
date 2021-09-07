@@ -1,5 +1,7 @@
 <template>
     <div>
-        Some Details data
+        {{getPostDetail.content}}
     </div>
 </template>
+
+<script src="./blog-detail.js"></script>

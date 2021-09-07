@@ -12,7 +12,7 @@ const routes = [
 		component: blogList
 	},
 	{
-		path: '/:slugName',
+		path: '/blog-detail/:slugName',
 		props: true,
 		name: 'blogDetail',
 		component: blogDetail

@@ -18,5 +18,6 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "Gill Sans", sans-serif;
+    font-size: 14px;
 }
 </style>

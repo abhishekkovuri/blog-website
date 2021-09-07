@@ -33,14 +33,26 @@
                         v-for="(post, index) of getPostsList"
                         :key="index"
                         @click="() => {goToDetails(post.slug)}">
-                        <div class="blog-title">
-                            <span class="bullet"><i class="fa fa-circle"></i></span>
+                        <div class="blog-category">
+                            <span class="bullet"><em class="fa fa-circle"></em></span>
                             {{Object.keys(post.categories).toString() | stringReplace}}
+                        </div>
+                        <div>
+                            <img class="logo thumbnail-img" :src="post.featured_image" alt="post image">
+                        </div>
+                        <div
+                            class="blog-title"
+                            :title="post.title">
+                            {{post.title}}
+                        </div>
+                        <div class="blog-date">
+                            {{moment(post.date).fromNow()}}
                         </div>
                     </div>
                 </div>
                 <div class="pagination-wrapper">
                     <el-pagination
+                        :small="true"
                         background
                         @current-change="handlePageChange"
                         :current-page.sync="pageNo"
@@ -50,7 +62,9 @@
                     </el-pagination>
                 </div>
             </div>
-            <div class="no-data" v-else>
+            <div
+                class="no-data"
+                v-else>
                 No Data for the selected Category
             </div>
         </div>
@@ -74,7 +88,8 @@
 
     .logo {
         object-fit: cover;
-        object-position: 100% 10%;
+        object-position: 50% 10%;
+        justify-content: center;
         width: 100vw;
         height: 500px;
     }
@@ -97,18 +112,33 @@
         display: flex;
         justify-content: flex-start;
         flex-flow: row wrap;
-        gap: 10px;
+        gap: 20px;
 
         .blog-card {
             border: 1px solid #999;
-            border-radius: 10px;
             height: 250px;
             width: 250px;
             padding: 10px;
+            position: relative;
         }
 
         .bullet {
             color: rgb(9, 124, 145)
+        }
+
+        .blog-title {
+            margin-top: 5px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .blog-date {
+            position: absolute;
+            bottom: 15px;
+            color: #999;
+            font-size: 16px;
         }
     }
 
@@ -116,9 +146,17 @@
         margin: 20px 0;
         text-align: center;
     }
+
     .no-data {
         margin: 10%;
         text-align: center;
+    }
+
+    .thumbnail-img {
+        margin-top: 5px;
+        border-radius: 10px;
+        width: 250px;
+        height: 150px
     }
 }
 </style>

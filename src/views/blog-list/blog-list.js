@@ -20,7 +20,7 @@ export default {
 			const postQuery = `?category=${this.category}&number=20&page=${this.pageNo}`
 			this.$store.dispatch('getPostsFromAPI', { postQuery })
 		},
-		goToDetails(slugName) {
+		goToDetails (slugName) {
 			const params = {
 				slugName
 			}
