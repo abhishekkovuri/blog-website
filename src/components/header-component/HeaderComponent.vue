@@ -1,7 +1,7 @@
 <template>
     <div class="header-wrapper">
         <div class="logo-container">
-            <img class="logo" :src="truecaller" alt="truecaller logo">
+            <img @click="backToHome" class="logo" :src="truecaller" alt="truecaller logo">
         </div>
         
     </div>

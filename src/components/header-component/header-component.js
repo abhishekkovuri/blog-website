@@ -6,5 +6,12 @@ export default {
         return {
             truecaller
         }
-	}
+    },
+    methods: {
+        backToHome() {
+            if (this.$route.path !== '/') {
+                this.$router.push('/')
+            }
+        }
+    }
 }

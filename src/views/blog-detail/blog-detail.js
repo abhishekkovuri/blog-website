@@ -6,6 +6,8 @@ export default {
 		const slugQuery = `/slug:${this.$route.params.slugName}`
 		this.$store.dispatch('getPostDetailsFromAPI', { slugQuery })
 	},
+	methods: {
+	},
 	computed: {
 		...mapGetters(['getPostDetail'])
 	}
