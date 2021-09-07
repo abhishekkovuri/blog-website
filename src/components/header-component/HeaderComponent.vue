@@ -1,9 +1,9 @@
 <template>
     <div class="header-wrapper">
         <div class="logo-container">
-            <img @click="backToHome" class="logo" :src="truecaller" alt="truecaller logo">
+            <img @click="() => $route.path !== '/' && $router.push('/')" class="logo pointer" :src="truecaller" alt="truecaller logo">
         </div>
-        
+
     </div>
 </template>
 
@@ -13,6 +13,7 @@
 .header-wrapper {
     display: flex;
     justify-content: left;
+
     .logo {
         width: 100px;
         padding: 10px 5px;

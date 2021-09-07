@@ -1,11 +1,11 @@
 <template>
     <div class="blog-list-wrapper">
         <div class="model-wrapper">
-            <div class="title-text"> The Truecaller Blog</div>
+            <div class="title-text align-center"> The Truecaller Blog</div>
             <img class="logo" src="@/assets/header.jpg" alt="model Logo">
         </div>
         <div class="blog-content">
-            <div class="sub-header">
+            <div class="fs-large">
                 Latest Articles
             </div>
             <div>
@@ -29,7 +29,7 @@
             <div v-if="getPostsList.length">
                 <div class="blog-card-wrapper">
                     <div
-                        class="blog-card"
+                        class="blog-card pointer"
                         v-for="(post, index) of getPostsList"
                         :key="index"
                         @click="() => {goToDetails(post.slug)}">
@@ -78,12 +78,8 @@
     position: relative;
 
     .title-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: #fff;
-        font-size: xxx-large;
+        font-size: 48px;
     }
 
     .logo {
@@ -99,10 +95,6 @@
     margin: 35px;
     padding: 25px;
     box-sizing: border-box;
-
-    .sub-header {
-        font-size: xxx-large;
-    }
 
     .select-wrapper {
         margin: 15px 0;

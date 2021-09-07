@@ -1,0 +1,24 @@
+// CSS reset
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: "Gill Sans", sans-serif;
+	font-size: 14px;
+}
+
+.align-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.fs-large {
+	font-size: 48px;
+}
+.fs-32 {
+	font-size: 32px;
+}
+.pointer {
+	cursor: pointer;
+}

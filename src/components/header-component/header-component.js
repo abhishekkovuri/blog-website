@@ -8,7 +8,7 @@ export default {
         }
     },
     methods: {
-        backToHome() {
+        backToHome () {
             if (this.$route.path !== '/') {
                 this.$router.push('/')
             }

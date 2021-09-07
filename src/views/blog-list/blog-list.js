@@ -21,9 +21,7 @@ export default {
 			this.$store.dispatch('getPostsFromAPI', { postQuery })
 		},
 		goToDetails (slugName) {
-			const params = {
-				slugName
-			}
+			const params = { slugName }
 			this.$router.push({ name: 'blogDetail', params })
 		}
 	},
